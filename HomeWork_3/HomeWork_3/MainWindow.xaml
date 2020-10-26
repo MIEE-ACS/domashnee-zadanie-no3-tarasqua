@@ -7,45 +7,24 @@
         mc:Ignorable="d"
         Title="УТС-21 Тарасов В-1" Height="450" Width="800">
 
-    <Grid x:Name="mainMenu" Background="#FFF1F1F1">
-        <TextBox x:Name="tb_sum" HorizontalAlignment="Left" Height="32" Margin="172,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" FontSize="18" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button x:Name="checkBtn" Content="Проверить!" HorizontalAlignment="Left" Margin="631,311,0,0" VerticalAlignment="Top" Width="105" Height="38" Click="checkBtn_Click"/>
-        <Label Content="Выбери правильный ответ:" HorizontalAlignment="Left" Margin="51,86,0,0" VerticalAlignment="Top" Width="350" Height="44" FontSize="18"/>
-        <Label Content="Сколько будет:" HorizontalAlignment="Left" Margin="51,135,0,0" VerticalAlignment="Top" Height="32" Width="121" FontSize="16"/>
-        <RadioButton x:Name="switch2" Content="" HorizontalAlignment="Left" Margin="237,203,0,0" VerticalAlignment="Top" Height="27" Width="112" FontSize="16"/>
-        <RadioButton x:Name="switch3" Content="" HorizontalAlignment="Left" Margin="412,203,0,0" VerticalAlignment="Top" Height="27" Width="112" FontSize="16"/>
-        <RadioButton x:Name="switch4" Content="" HorizontalAlignment="Left" Margin="589,203,0,0" VerticalAlignment="Top" Height="27" Width="112" FontSize="16"/>
-        <Label Content="Количество правильных ответов:" HorizontalAlignment="Left" Margin="40,314,0,0" VerticalAlignment="Top" Width="226" RenderTransformOrigin="0.5,0.5" Height="35" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.414"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Button x:Name="startBtn" Content="Начать тест" HorizontalAlignment="Left" Margin="496,311,0,0" VerticalAlignment="Top" Width="101" Height="38" Click="startBtn_Click_1"/>
-        <TextBox x:Name="tb_sw1" HorizontalAlignment="Left" Height="23" Margin="71,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" IsReadOnly="True" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="tb_sw2" HorizontalAlignment="Left" Height="23" Margin="252,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" IsReadOnly="True" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="tb_sw3" HorizontalAlignment="Left" Height="23" Margin="429,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" IsReadOnly="True" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="tb_sw4" HorizontalAlignment="Left" Height="23" Margin="605,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" IsReadOnly="True" VerticalContentAlignment="Center"/>
-        <RadioButton x:Name="switch1" Content="" HorizontalAlignment="Left" Margin="51,203,0,0" VerticalAlignment="Top" Height="23" Width="102"/>
-        <Label x:Name="label_correct" Content="" HorizontalAlignment="Left" Margin="71,257,0,0" VerticalAlignment="Top" Width="106" FontSize="18" FontWeight="Bold"/>
-        <Label x:Name="label_trueAnswer" Content="" HorizontalAlignment="Left" Margin="218,257,0,0" VerticalAlignment="Top" Width="264" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Количество неправильных ответов:" HorizontalAlignment="Left" Margin="40,356,0,0" VerticalAlignment="Top" Width="245" RenderTransformOrigin="0.5,0.5" Height="35" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.414"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <TextBox x:Name="tb_countOfFalseAns" HorizontalAlignment="Left" Height="38" Margin="293,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" FontSize="16" IsReadOnly="True" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="tb_countOfCorrectAns" HorizontalAlignment="Left" Height="38" Margin="293,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" FontSize="16" IsReadOnly="True" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Давай проверим твои знания арифметики!" HorizontalAlignment="Left" Margin="34,10,0,0" VerticalAlignment="Top" Width="448" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Height="67" FontWeight="Bold"/>
+    <Grid x:Name="mainMenu" Background="#FFF0F0F0">
+        <TextBox x:Name="tb_sum" HorizontalAlignment="Left" Height="43" Margin="303,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" FontSize="20" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <Button x:Name="checkBtn" Content="Проверить!" HorizontalAlignment="Left" Margin="326,235,0,0" VerticalAlignment="Top" Width="105" Height="38" Click="checkBtn_Click" Visibility="Hidden"/>
+        <Label x:Name="label_chooseTrueAns" Content="Выбери правильный ответ:" HorizontalAlignment="Left" Margin="251,18,0,0" VerticalAlignment="Top" Width="254" Height="44" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <RadioButton x:Name="switch2" Content="" HorizontalAlignment="Left" Margin="260,152,0,0" VerticalAlignment="Top" Height="27" Width="112" FontSize="16" Visibility="Hidden"/>
+        <RadioButton x:Name="switch3" Content="" HorizontalAlignment="Left" Margin="556,152,0,0" VerticalAlignment="Top" Height="27" Width="112" FontSize="16" Visibility="Hidden"/>
+        <RadioButton x:Name="switch4" Content="" HorizontalAlignment="Left" Margin="412,152,0,0" VerticalAlignment="Top" Height="27" Width="112" FontSize="16" Visibility="Hidden"/>
+        <Button x:Name="startBtn" Content="Начать тест" HorizontalAlignment="Left" Margin="326,235,0,0" VerticalAlignment="Top" Width="105" Height="38" Click="startBtn_Click_1"/>
+        <TextBox x:Name="tb_sw1" HorizontalAlignment="Left" Height="23" Margin="143,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" IsReadOnly="True" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <TextBox x:Name="tb_sw2" HorizontalAlignment="Left" Height="23" Margin="284,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" IsReadOnly="True" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <TextBox x:Name="tb_sw3" HorizontalAlignment="Left" Height="23" Margin="577,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" IsReadOnly="True" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <TextBox x:Name="tb_sw4" HorizontalAlignment="Left" Height="23" Margin="435,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" IsReadOnly="True" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <RadioButton x:Name="switch1" Content="" HorizontalAlignment="Left" Margin="123,152,0,0" VerticalAlignment="Top" Height="23" Width="102" Visibility="Hidden"/>
+        <Label x:Name="label_correct" Content="" HorizontalAlignment="Left" Margin="326,311,0,0" VerticalAlignment="Top" Width="106" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.509,0.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_trueAnswer" Content="" HorizontalAlignment="Left" Margin="251,350,0,0" VerticalAlignment="Top" Width="264" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_countOfFalseAns" HorizontalAlignment="Left" Height="38" Margin="486,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" FontSize="16" IsReadOnly="True" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <TextBox x:Name="tb_countOfCorrectAns" HorizontalAlignment="Left" Height="38" Margin="236,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" FontSize="16" IsReadOnly="True" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <Label x:Name="label_click" Content="click!" HorizontalAlignment="Left" Margin="352,202,0,0" VerticalAlignment="Top" Height="33" Width="59" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="MV Boli" FontSize="17" Foreground="#FFDA3200"/>
 
 
     </Grid>

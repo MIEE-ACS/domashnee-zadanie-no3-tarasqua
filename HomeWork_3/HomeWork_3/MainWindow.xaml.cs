@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Drawing;
 using System.Windows.Media;
 
 namespace HomeWork_3
@@ -53,11 +52,34 @@ namespace HomeWork_3
 
         private void startBtn_Click_1(object sender, RoutedEventArgs e)
         {
+            mainMenu.Background = new LinearGradientBrush(Colors.LightBlue, Colors.SlateBlue, 90);
+            tb_countOfCorrectAns.Visibility = Visibility.Visible;
+            tb_countOfFalseAns.Visibility = Visibility.Visible;
+            tb_countOfCorrectAns.Text = $"{counterOfTrueAns}";
+            tb_countOfFalseAns.Text = $"{counterOfFalseAns}";
+            tb_countOfFalseAns.Background = Brushes.DarkOrange;
+            tb_countOfCorrectAns.Background = Brushes.LightGreen;
+
             if (y < 0) { tb_sum.Text = $"{x}{y} = ?"; }
             else { tb_sum.Text = $"{x}+{y} = ?"; }
             key = rand.Next(1, 4);
             switchCases(key);
+
             startBtn.IsEnabled = false;
+            startBtn.Visibility = Visibility.Hidden;
+            label_click.Visibility = Visibility.Hidden;
+
+            checkBtn.Visibility = Visibility.Visible;
+            tb_sum.Visibility = Visibility.Visible;
+            label_chooseTrueAns.Visibility = Visibility.Visible;
+            switch1.Visibility = Visibility.Visible;
+            tb_sw1.Visibility = Visibility.Visible;
+            switch2.Visibility = Visibility.Visible;
+            tb_sw2.Visibility = Visibility.Visible;
+            switch3.Visibility = Visibility.Visible;
+            tb_sw3.Visibility = Visibility.Visible;
+            switch4.Visibility = Visibility.Visible;
+            tb_sw4.Visibility = Visibility.Visible;
         }
 
         private void checkBtn_Click(object sender, RoutedEventArgs e)
@@ -116,27 +138,27 @@ namespace HomeWork_3
                 switch (counterOfTrueAns)
                 {
                     case 0:
-                        mainMenu.Background = Brushes.Red;
+                        mainMenu.Background = new LinearGradientBrush(Colors.Red, Colors.DarkRed, 90);
                         MessageBox.Show($"Твоя оценка: 0 \nПопробуй еще раз!");
                         break;
                     case 1:
-                        mainMenu.Background = Brushes.OrangeRed;
+                        mainMenu.Background = new LinearGradientBrush(Colors.OrangeRed, Colors.DarkOrange, 90);
                         MessageBox.Show($"Твоя оценка: 1 \nТы можешь лучше!");
                         break;
                     case 2:
-                        mainMenu.Background = Brushes.Orange;
+                        mainMenu.Background = new LinearGradientBrush(Colors.Orange, Colors.DarkOrange, 90);
                         MessageBox.Show($"Твоя оценка: 2 \n2 - тоже оценка!");
                         break;
                     case 3:
-                        mainMenu.Background = Brushes.Yellow;
+                        mainMenu.Background = new LinearGradientBrush(Colors.LightYellow, Colors.Yellow, 90);
                         MessageBox.Show($"Твоя оценка: 3 \nНе так уж и плохо!");
                         break;
                     case 4:
-                        mainMenu.Background = Brushes.YellowGreen;
+                        mainMenu.Background = new LinearGradientBrush(Colors.YellowGreen, Colors.Green, 90);
                         MessageBox.Show($"Твоя оценка: 4 \nЭто хорошо!");
                         break;
                     case 5:
-                                                mainMenu.Background = Brushes.Green;
+                        mainMenu.Background = new LinearGradientBrush(Colors.LightGreen, Colors.Green, 90);
                         MessageBox.Show($"Твоя оценка: 5 \nМолодец!");
                         break;
                 }
