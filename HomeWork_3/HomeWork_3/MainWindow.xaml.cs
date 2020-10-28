@@ -16,30 +16,52 @@ namespace HomeWork_3
 
         public void switchCases(int key)
         {
+            int x1 = x + y - rand.Next(1, 20);
+            int x2 = x + y + rand.Next(1, 20);
+            int x3 = x + y - rand.Next(1, 20);
+
+            if (x1 == x2)
+            {
+                x2 = x + y - rand.Next(1, 20);
+            }
+            else if (x2 == x3)
+            {
+                x3 = x + y + rand.Next(1, 20);
+            }
+            else if (x1 == x3)
+            {
+                x1 = x + y + rand.Next(1, 20);
+            }
+            else if (x1 == x2 && x2 == x3)
+            {
+                x1 = x + y + rand.Next(1, 20);
+                x2 = x + y - rand.Next(1, 20);
+            }
+
             switch (key)
             {
                 case 1:
                     tb_sw1.Text = $"1.  {x + y}";
-                    tb_sw2.Text = $"2.  {x + y - rand.Next(1, 10)}";
-                    tb_sw3.Text = $"3.  {x + y + rand.Next(1, 10)}";
-                    tb_sw4.Text = $"4.  {x + y - rand.Next(1, 10)}";
+                    tb_sw2.Text = $"2.  {x1}";
+                    tb_sw3.Text = $"3.  {x2}";
+                    tb_sw4.Text = $"4.  {x3}";
                     break;
                 case 2:
-                    tb_sw1.Text = $"1.  {x + y - rand.Next(1, 10)}";
+                    tb_sw1.Text = $"1.  {x1}";
                     tb_sw2.Text = $"2.  {x + y}";
-                    tb_sw3.Text = $"3.  {x + y + rand.Next(1, 10)}";
-                    tb_sw4.Text = $"4.  {x + y - rand.Next(1, 10)}";
+                    tb_sw3.Text = $"3.  {x2}";
+                    tb_sw4.Text = $"4.  {x3}";
                     break;
                 case 3:
-                    tb_sw1.Text = $"1.  {x + y + rand.Next(1, 10)}";
-                    tb_sw2.Text = $"2.  {x + y - rand.Next(1, 10)}";
+                    tb_sw1.Text = $"1.  {x1}";
+                    tb_sw2.Text = $"2.  {x2}";
                     tb_sw3.Text = $"3.  {x + y}";
-                    tb_sw4.Text = $"4.  {x + y - rand.Next(1, 10)}";
+                    tb_sw4.Text = $"4.  {x3}";
                     break;
                 case 4:
-                    tb_sw1.Text = $"1.  {x + y + rand.Next(1, 10)}";
-                    tb_sw2.Text = $"2.  {x + y - rand.Next(1, 10)}";
-                    tb_sw3.Text = $"3.  {x + y + rand.Next(1, 10)}";
+                    tb_sw1.Text = $"1.  {x1}";
+                    tb_sw2.Text = $"2.  {x2}";
+                    tb_sw3.Text = $"3.  {x3}";
                     tb_sw4.Text = $"4.  {x + y}";
                     break;
             }
@@ -52,6 +74,10 @@ namespace HomeWork_3
 
         private void startBtn_Click_1(object sender, RoutedEventArgs e)
         {
+            label_correct.Content = "";
+            label_trueAnswer.Content = "";
+
+            checkBtn.IsEnabled = true;
             mainMenu.Background = new LinearGradientBrush(Colors.LightBlue, Colors.SlateBlue, 90);
             tb_countOfCorrectAns.Visibility = Visibility.Visible;
             tb_countOfFalseAns.Visibility = Visibility.Visible;
@@ -91,6 +117,7 @@ namespace HomeWork_3
                 tb_countOfCorrectAns.Text = $"{counterOfTrueAns}";
                 label_correct.Content = "Верно!";
                 label_trueAnswer.Visibility = Visibility.Hidden;
+                switch1.IsChecked = false;
 
             }
             else if (key == 2 && switch2.IsChecked == true)
@@ -99,6 +126,7 @@ namespace HomeWork_3
                 tb_countOfCorrectAns.Text = $"{counterOfTrueAns}";
                 label_correct.Content = "Верно!";
                 label_trueAnswer.Visibility = Visibility.Hidden;
+                switch2.IsChecked = false;
             }
             else if (key == 3 && switch3.IsChecked == true)
             {
@@ -106,6 +134,7 @@ namespace HomeWork_3
                 tb_countOfCorrectAns.Text = $"{counterOfTrueAns}";
                 label_correct.Content = "Верно!";
                 label_trueAnswer.Visibility = Visibility.Hidden;
+                switch3.IsChecked = false;
             }
             else if (key == 4 && switch4.IsChecked == true)
             {
@@ -113,6 +142,7 @@ namespace HomeWork_3
                 tb_countOfCorrectAns.Text = $"{counterOfTrueAns}";
                 label_correct.Content = "Верно!";
                 label_trueAnswer.Visibility = Visibility.Hidden;
+                switch4.IsChecked = false;
             }
             else
             {
@@ -122,6 +152,11 @@ namespace HomeWork_3
                 if (y < 0) { label_trueAnswer.Content = $"Правильный ответ: {key}. {x}{y} = {x + y}"; }
                 else { label_trueAnswer.Content = $"Правильный ответ: {key}. {x}+{y} = {x + y}"; }
                 label_trueAnswer.Visibility = Visibility.Visible;
+
+                switch1.IsChecked = false;
+                switch2.IsChecked = false;
+                switch3.IsChecked = false;
+                switch4.IsChecked = false;
             }
             counterOfAns++;
 
@@ -162,6 +197,14 @@ namespace HomeWork_3
                         MessageBox.Show($"Твоя оценка: 5 \nМолодец!");
                         break;
                 }
+
+                startBtn.Content = "Новый тест";
+                startBtn.IsEnabled = true;
+                startBtn.Visibility = Visibility.Visible;
+
+                counterOfAns = 0;
+                counterOfTrueAns = 0;
+                counterOfFalseAns = 0;
             }
         }
     }
